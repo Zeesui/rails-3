@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users do 
+    post '/users/sign_out' => 'devise/sessions#destroy'
+  end
 	resources :groups do
 		member do
 			post :join
